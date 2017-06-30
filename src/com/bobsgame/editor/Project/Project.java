@@ -2694,7 +2694,7 @@ public class Project
 
 		//String dirpath = System.getProperties().getProperty("user.home")+"\\Desktop\\";
 
-//		String dirpath = "C:\\Users\\Administrator\\workspace\\bg-android\\assets\\sprites\\";//"C:\\xampp\\htdocs\\z\\";
+//		String dirpath = EditorMain.androidProjectAssetsDir+"sprites\\";//EditorMain.htdocsZippedAssetsDir;
 //		Utils.makeDir(dirpath);
 //
 //
@@ -2720,7 +2720,7 @@ public class Project
 
 
 			{
-				String p = "C:\\Users\\Administrator\\workspace\\bg-android\\assets\\sprites\\";
+				String p = EditorMain.androidProjectAssetsDir+"sprites\\";
 				Utils.makeDir(p);
 
 
@@ -2794,7 +2794,7 @@ public class Project
 
 
 			{
-				String p = "C:\\Users\\Administrator\\workspace\\bg-android\\assets\\sounds\\";
+				String p = EditorMain.androidProjectAssetsDir+"sounds\\";
 				Utils.makeDir(p);
 				//pw.println("Sounds");
 
@@ -2851,10 +2851,10 @@ public class Project
 								File f = new File(fullFilePath);
 								if(f.exists()==false)
 								{
-									String[] commands = {"C:\\Users\\Administrator\\workspace\\_sfx\\lame.exe", "-b 192", "\""+originalFilePath+"\"", "\""+fullFilePath+"\""};
+									String[] commands = {EditorMain.lameEncoderPath, "-b 192", "\""+originalFilePath+"\"", "\""+fullFilePath+"\""};
 									try{Runtime.getRuntime().exec(commands).waitFor();}catch(InterruptedException e){e.printStackTrace();}
 
-									//String[] commands = {"C:\\Users\\Administrator\\workspace\\_sfx\\oggenc2.exe", "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
+									//String[] commands = {EditorMain.oggEncPath, "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
 									//try{Runtime.getRuntime().exec(commands).waitFor();}catch(InterruptedException e){e.printStackTrace();}
 								}
 
@@ -2882,7 +2882,7 @@ public class Project
 
 
 			{
-				String p = "C:\\Users\\Administrator\\workspace\\bg-android\\assets\\music\\";
+				String p = EditorMain.androidProjectAssetsDir+"music\\";
 				Utils.makeDir(p);
 
 				File indexFile = new File(p + "index" + ".txt");
@@ -2933,11 +2933,11 @@ public class Project
 							if(f.exists()==false)
 							{
 
-								String[] commands = {"C:\\Users\\Administrator\\workspace\\_sfx\\lame.exe", "-b 192", "\""+originalFilePath+"\"", "\""+fullFilePath+"\""};
+								String[] commands = {EditorMain.lameEncoderPath, "-b 192", "\""+originalFilePath+"\"", "\""+fullFilePath+"\""};
 								try{Runtime.getRuntime().exec(commands).waitFor();}catch(InterruptedException e){e.printStackTrace();}
 
 
-								//String[] commands = {"C:\\Users\\Administrator\\workspace\\_sfx\\oggenc2.exe", "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
+								//String[] commands = {EditorMain.oggEncPath, "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
 								//try{Runtime.getRuntime().exec(commands).waitFor();}catch(InterruptedException e){e.printStackTrace();}
 							}
 
@@ -2975,7 +2975,7 @@ public class Project
 
 		//String oggTemp = EditorMain.exportDirectory;
 
-		String dirpath = "C:\\xampp\\htdocs\\z\\";
+		String dirpath = EditorMain.htdocsZippedAssetsDir;
 
 		try
 		{
@@ -3047,7 +3047,7 @@ public class Project
 					if(f.exists()==false)
 					{
 
-						String[] commands = {"C:\\Users\\Administrator\\workspace\\_sfx\\oggenc2.exe", "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
+						String[] commands = {EditorMain.oggEncPath, "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
 						try{Runtime.getRuntime().exec(commands).waitFor();}catch(InterruptedException e){e.printStackTrace();}
 					}
 				}
@@ -3109,7 +3109,7 @@ public class Project
 					if(f.exists()==false)
 					{
 
-						String[] commands = {"C:\\Users\\Administrator\\workspace\\_sfx\\oggenc2.exe", "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
+						String[] commands = {EditorMain.oggEncPath, "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
 						try{Runtime.getRuntime().exec(commands).waitFor();}catch(InterruptedException e){e.printStackTrace();}
 					}
 
@@ -3212,7 +3212,7 @@ public class Project
 	{//===============================================================================================
 
 
-		String baseDir = "C:\\Users\\Administrator\\workspace\\bobsgame\\data\\";
+		String baseDir = EditorMain.clientPreloadedAssetsDir;
 		//String baseDir = "C:\\Users\\Administrator\\workspace\\BobsGameOnline\\res\\";
 		Utils.makeDir(baseDir);
 
@@ -3856,7 +3856,7 @@ public class Project
 			Utils.makeDir(dirpath);
 			//Utils.makeDir(dirpath + name() + "\\");
 
-			Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\");
+			Utils.makeDir(EditorMain.serverDataDir);
 
 
 
@@ -3864,9 +3864,9 @@ public class Project
 			try
 			{
 
-				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\MapData"))));
+				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(EditorMain.serverDataDir+"MapData"))));
 
-				ZipOutputStream zos = new ZipOutputStream(new FileOutputStream("C:\\xampp\\htdocs\\z\\maps.zip"));
+				ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(EditorMain.htdocsZippedAssetsDir+"maps.zip"));
 
 
 				for(int m = 0; m < getNumMaps(); m++)
@@ -3996,14 +3996,14 @@ public class Project
 		String dirpath = EditorMain.getDesktopTempDirPath() + "htdocs\\bin\\sprite\\";
 
 
-		Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\");
-			Utils.makeDir("C:\\xampp\\htdocs\\z\\");
+		Utils.makeDir(EditorMain.serverDataDir);
+			Utils.makeDir(EditorMain.htdocsZippedAssetsDir);
 
 			try
 			{
-				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\SpriteData"))));
+				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(EditorMain.serverDataDir+"SpriteData"))));
 
-				ZipOutputStream zos = new ZipOutputStream(new FileOutputStream("C:\\xampp\\htdocs\\z\\sprites.zip"));
+				ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(EditorMain.htdocsZippedAssetsDir+"sprites.zip"));
 
 				for(int i = 0; i < getNumSprites(); i++)
 				{
@@ -4032,11 +4032,11 @@ public class Project
 	public void exportServerDialogueAssetIndex()
 	{//===============================================================================================
 
-		Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\");
+		Utils.makeDir(EditorMain.serverDataDir);
 
 		try
 		{
-			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\DialogueData"))));
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(EditorMain.serverDataDir+"DialogueData"))));
 
 			for(int s = 0; s < dialogueList.size(); s++)
 			{
@@ -4057,16 +4057,16 @@ public class Project
 	public void exportServerCutsceneEventAssetIndex()
 	{//===============================================================================================
 
-		Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\");
+		Utils.makeDir(EditorMain.serverDataDir);
 
 		try
 		{
-			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\CutsceneEventData"))));
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(EditorMain.serverDataDir+"CutsceneEventData"))));
 
 
-			for(int s = 0; s < cutsceneEventList.size(); s++)
+			for(int s = 0; s < eventList.size(); s++)
 			{
-				Event d = cutsceneEventList.get(s);
+				Event d = eventList.get(s);
 				pw.println(d.getData().toString());
 			}
 
@@ -4080,11 +4080,11 @@ public class Project
 	public void exportServerGameStringAssetIndex()
 	{//===============================================================================================
 
-		Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\");
+		Utils.makeDir(EditorMain.serverDataDir);
 
 		try
 		{
-			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\GameStringData"))));
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(EditorMain.serverDataDir+"GameStringData"))));
 
 			for(int s = 0; s < gameStringList.size(); s++)
 			{
@@ -4102,11 +4102,11 @@ public class Project
 	public void exportServerFlagAssetIndex()
 	{//===============================================================================================
 
-		Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\");
+		Utils.makeDir(EditorMain.serverDataDir);
 
 		try
 		{
-			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\FlagData"))));
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(EditorMain.serverDataDir+"FlagData"))));
 
 			for(int s = 0; s < flagList.size(); s++)
 			{
@@ -4124,12 +4124,12 @@ public class Project
 	public void exportServerPlayerSkillAssetIndex()
 	{//===============================================================================================
 
-		Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\");
+		Utils.makeDir(EditorMain.serverDataDir);
 
 
 		try
 		{
-			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\SkillData"))));
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(EditorMain.serverDataDir+"SkillData"))));
 
 			for(int s = 0; s < skillList.size(); s++)
 			{
@@ -4148,14 +4148,14 @@ public class Project
 	{//===============================================================================================
 
 
-			Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\");
+			Utils.makeDir(EditorMain.serverDataDir);
 			//String oggTemp = EditorMain.exportDirectory;
 
 			try
 			{
-				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\MusicData"))));
+				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(EditorMain.serverDataDir+"MusicData"))));
 
-				ZipOutputStream zos = new ZipOutputStream(new FileOutputStream("C:\\xampp\\htdocs\\z\\music.zip"));
+				ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(EditorMain.htdocsZippedAssetsDir+"music.zip"));
 
 				for(int i = 0; i < musicList.size(); i++)
 				{
@@ -4183,7 +4183,7 @@ public class Project
 						if(f.exists()==false)
 						{
 							System.out.println("Encoding "+originalFilePath+"...");
-							String[] commands = {"C:\\Users\\Administrator\\workspace\\_sfx\\oggenc2.exe", "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
+							String[] commands = {EditorMain.oggEncPath, "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
 							try{Runtime.getRuntime().exec(commands).waitFor();}catch(InterruptedException e){e.printStackTrace();}
 							System.out.println("Finished encoding");
 						}
@@ -4206,7 +4206,7 @@ public class Project
 
 					pw.println(data.toString());
 
-					FileUtils.copyFile(new File(fullFilePath),new File("C:\\xampp\\htdocs\\z\\"+md5FileName));
+					FileUtils.copyFile(new File(fullFilePath),new File(EditorMain.htdocsZippedAssetsDir+md5FileName));
 
 
 
@@ -4227,13 +4227,13 @@ public class Project
 
 			//String oggTemp = EditorMain.exportDirectory;
 
-			Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\");
+			Utils.makeDir(EditorMain.serverDataDir);
 
 			try
 			{
-				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File("C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\SoundData"))));
+				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(EditorMain.serverDataDir+"SoundData"))));
 
-				ZipOutputStream zos = new ZipOutputStream(new FileOutputStream("C:\\xampp\\htdocs\\z\\sounds.zip"));
+				ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(EditorMain.htdocsZippedAssetsDir+"sounds.zip"));
 
 				for(int i = 0; i < soundList.size(); i++)
 				{
@@ -4261,7 +4261,7 @@ public class Project
 						if(f.exists()==false)
 						{
 
-							String[] commands = {"C:\\Users\\Administrator\\workspace\\_sfx\\oggenc2.exe", "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
+							String[] commands = {EditorMain.oggEncPath, "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
 							try{Runtime.getRuntime().exec(commands).waitFor();}catch(InterruptedException e){e.printStackTrace();}
 						}
 
@@ -4725,7 +4725,7 @@ public class Project
 			{
 				try
 				{
-					FileUtils.copyFile(new File("C:\\xampp\\htdocs\\z\\"+data.md5Name()),new File("C:\\Users\\Administrator\\.bobsGame\\"+data.md5Name()));
+					FileUtils.copyFile(new File(EditorMain.htdocsZippedAssetsDir+data.md5Name()),new File("C:\\Users\\Administrator\\.bobsGame\\"+data.md5Name()));
 				}
 				catch(IOException e1)
 				{
