@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=bgEditor&amp;ivyXmlPath=ivy.xml&amp;confs=*"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/BobSharedLibs"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/workspace/bgEditor/libs/lwjgl/lwjgl-maven/maven/lwjgl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/workspace/bgEditor/libs/lwjgl/lwjgl-maven/maven/lwjgl_util.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/workspace/bgEditor/libs/lwjgl/lwjgl-maven/maven/lwjgl_util_applet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/workspace/bgEditor/libs/lwjgl/lwjgl-maven/maven/lwjgl_util_applet-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/workspace/bgEditor/libs/lwjgl/lwjgl-maven/maven/lwjgl_util_applet-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/workspace/bgEditor/libs/lwjgl/lwjgl-maven/maven/lwjgl_util-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/workspace/bgEditor/libs/lwjgl/lwjgl-maven/maven/lwjgl_util-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/workspace/bgEditor/libs/lwjgl/lwjgl-maven/maven/lwjgl-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/workspace/bgEditor/libs/lwjgl/lwjgl-maven/maven/lwjgl-platform-natives-linux.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/workspace/bgEditor/libs/lwjgl/lwjgl-maven/maven/lwjgl-platform-natives-osx.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/workspace/bgEditor/libs/lwjgl/lwjgl-maven/maven/lwjgl-platform-natives-windows.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/workspace/bgEditor/libs/lwjgl/lwjgl-maven/maven/lwjgl-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
