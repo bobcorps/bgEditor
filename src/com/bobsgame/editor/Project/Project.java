@@ -3968,7 +3968,7 @@ public class Project
 					}
 
 
-					pw.println(mapData.toString());
+					pw.println(mapData.toJSON());
 
 				}
 
@@ -4013,7 +4013,7 @@ public class Project
 					spriteData.setDataMD5(Utils.putFileInZipAsMD5(zos,dirpath + s.name() + "_SpriteDataUnique.bin"));
 					spriteData.setPaletteMD5(Utils.putFileInZipAsMD5(zos,dirpath + s.name() + "_SpritePaletteUnique.bin"));
 
-					pw.println(spriteData.toString());
+					pw.println(spriteData.toJSON());
 				}
 
 				pw.close();
@@ -4041,7 +4041,7 @@ public class Project
 			for(int s = 0; s < dialogueList.size(); s++)
 			{
 				Dialogue d = dialogueList.get(s);
-				pw.println(d.getData().toString());
+				pw.println(d.getData().toJSON());
 			}
 
 			pw.close();
@@ -4067,7 +4067,7 @@ public class Project
 			for(int s = 0; s < eventList.size(); s++)
 			{
 				Event d = eventList.get(s);
-				pw.println(d.getData().toString());
+				pw.println(d.getData().toJSON());
 			}
 
 			pw.close();
@@ -4089,7 +4089,7 @@ public class Project
 			for(int s = 0; s < gameStringList.size(); s++)
 			{
 				GameString d = gameStringList.get(s);
-				pw.println(d.getData().toString());
+				pw.println(d.getData().toJSON());
 			}
 
 			pw.close();
@@ -4111,7 +4111,7 @@ public class Project
 			for(int s = 0; s < flagList.size(); s++)
 			{
 				Flag d = flagList.get(s);
-				pw.println(d.getData().toString());
+				pw.println(d.getData().toJSON());
 			}
 
 			pw.close();
@@ -4134,7 +4134,7 @@ public class Project
 			for(int s = 0; s < skillList.size(); s++)
 			{
 				Skill d = skillList.get(s);
-				pw.println(d.getData().toString());
+				pw.println(d.getData().toJSON());
 			}
 
 			pw.close();
@@ -4204,7 +4204,7 @@ public class Project
 					data.setMD5Name(md5FileName);
 					s.setMD5Name(md5FileName);
 
-					pw.println(data.toString());
+					pw.println(data.toJSON());
 
 					FileUtils.copyFile(new File(fullFilePath),new File(EditorMain.htdocsZippedAssetsDir+md5FileName));
 
@@ -4275,7 +4275,7 @@ public class Project
 					data.setMD5Name(md5FileName);
 					s.setMD5Name(md5FileName);
 
-					pw.println(data.toString());
+					pw.println(data.toJSON());
 
 				}
 				pw.close();
