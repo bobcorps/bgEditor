@@ -92,13 +92,13 @@ public class EditorMain extends JFrame implements ActionListener, ItemListener, 
 
 
 	public static String exportDirectory = System.getProperties().getProperty("user.home")+"\\Desktop\\bgEditor_Output\\";
-	public static String defaultProjectFolder = "C:\\Users\\Administrator\\workspace\\_gfx\\_____MAPS\\";
-	public static String serverDataDir = "C:\\Users\\Administrator\\workspace\\BobsGameServer\\res\\data\\";
+	public static String defaultProjectFolder = "F:\\source\\games\\bobsgame\\workspace\\_gfx\\_____MAPS\\";
+	public static String serverDataDir = "F:\\source\\games\\bobsgame\\workspace\\BobsGameServer\\res\\data\\";
 	public static String htdocsZippedAssetsDir = "C:\\xampp\\htdocs\\z\\";
-	public static String oggEncPath = "C:\\Users\\Administrator\\workspace\\_sfx\\oggenc2.exe";
-	public static String lameEncoderPath = "C:\\Users\\Administrator\\workspace\\_sfx\\lame.exe";
-	public static String clientPreloadedAssetsDir = "C:\\Users\\Administrator\\workspace\\bobsgame\\data\\";
-	public static String androidProjectAssetsDir = "C:\\Users\\Administrator\\workspace\\bg-android\\assets\\";
+	public static String oggEncPath = "F:\\source\\games\\bobsgame\\workspace\\_sfx\\oggenc2.exe";
+	public static String lameEncoderPath = "F:\\source\\games\\bobsgame\\workspace\\_sfx\\lame.exe";
+	public static String clientPreloadedAssetsDir = "F:\\source\\games\\bobsgame\\workspace\\bobsgame\\data\\";
+	public static String androidProjectAssetsDir = "F:\\source\\games\\bobsgame\\workspace\\bg-android\\assets\\";
 
 
 
@@ -546,34 +546,34 @@ public class EditorMain extends JFrame implements ActionListener, ItemListener, 
 
 				fileMenu.add(newProject);
 				//--------------------------------------------------------------
-				fileMenu.add(new JMenuSpacer(""));
+				//fileMenu.add(new JMenuSpacer(""));
 				//--------------------------------------------------------------
 				fileMenu.add(openProject);
 				//--------------------------------------------------------------
-				fileMenu.add(new JMenuSpacer(""));
-				fileMenu.add(new JMenuSpacer(""));
+				//fileMenu.add(new JMenuSpacer(""));
+				//fileMenu.add(new JMenuSpacer(""));
 				//--------------------------------------------------------------
 				fileMenu.add(saveProject);
 				//--------------------------------------------------------------
-				fileMenu.add(new JMenuSpacer(""));
+				//fileMenu.add(new JMenuSpacer(""));
 				//--------------------------------------------------------------
 				//--------------------------------------------------------------
-				fileMenu.add(new JMenuSpacer(""));
-				fileMenu.add(new JMenuSpacer(""));
-				fileMenu.add(new JMenuSpacer(""));
-				fileMenu.add(new JMenuSpacer(""));
+				//fileMenu.add(new JMenuSpacer(""));
+				//fileMenu.add(new JMenuSpacer(""));
+				//fileMenu.add(new JMenuSpacer(""));
+				//fileMenu.add(new JMenuSpacer(""));
 				//--------------------------------------------------------------
 
 				fileMenu.add(exportProject);
-				fileMenu.add(new JMenuSpacer(""));
+				//fileMenu.add(new JMenuSpacer(""));
 				fileMenu.add(exportProjectAsGameData);
 				fileMenu.add(exportProjectToWorkspaceLibGDXAssetsFolderForHTML5);
 				//--------------------------------------------------------------
-				fileMenu.add(new JMenuSpacer(""));
+				//fileMenu.add(new JMenuSpacer(""));
 				//--------------------------------------------------------------
 				//--------------------------------------------------------------
-				fileMenu.add(new JMenuSpacer(""));
-				fileMenu.add(new JMenuSpacer(""));
+				//fileMenu.add(new JMenuSpacer(""));
+				//fileMenu.add(new JMenuSpacer(""));
 				//--------------------------------------------------------------
 				fileMenu.add(exit);
 
