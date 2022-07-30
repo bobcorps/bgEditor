@@ -108,7 +108,7 @@ public class AudioEditor extends JFrame implements ActionListener, ItemListener,
 
 
 
-		soundFileChooser = new JFileChooser("C:\\Users\\Administrator\\workspace\\_sfx");
+		soundFileChooser = new JFileChooser("F:\\source\\games\\bobsgame\\workspace\\_sfx");
 		soundFileChooser.setMultiSelectionEnabled(true);
 		soundFileChooser.setFileFilter(new FileFilter()
 		{
@@ -152,7 +152,7 @@ public class AudioEditor extends JFrame implements ActionListener, ItemListener,
 		);
 
 
-		musicFileChooser = new JFileChooser("C:\\Users\\Administrator\\workspace\\_music");
+		musicFileChooser = new JFileChooser("F:\\source\\games\\bobsgame\\workspace\\_music");
 		musicFileChooser.setMultiSelectionEnabled(true);
 		musicFileChooser.setFileFilter(new FileFilter()
 		{

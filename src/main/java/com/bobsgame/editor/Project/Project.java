@@ -3252,7 +3252,7 @@ public class Project
 
 		ArrayList<Sprite> preloadSpriteList = new ArrayList<Sprite>();
 		ArrayList<Music> preloadMusicList = new ArrayList<Music>();
-		//ArrayList<Event> eventCheckList = new ArrayList<Event>();
+		ArrayList<Event> eventCheckList = new ArrayList<Event>();
 
 		for(int i=0;i<musicList.size();i++)
 		{
@@ -3604,55 +3604,54 @@ public class Project
 		//now output the dialogues those events need
 
 
-//
-//		//===============================================================================================
-//		//public void exportClientPreloadedDialogueIndex()
-//		{//===============================================================================================
-//
-//			//Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameOnline\\res\\");
-//
-//			ArrayList<Dialogue> preloadDialogueList = new ArrayList<Dialogue>();
-//
-//			for(int i=0;i<eventCheckList.size();i++)
-//			{
-//				Event e = eventCheckList.get(i);
-//				String s = ""+e.text();
-//				while(s.contains("DIALOGUE."))
-//				{
-//					s = s.substring(s.indexOf("DIALOGUE."));
-//					if(s.indexOf("|")!=-1&&s.indexOf("|")<s.indexOf(")"))
-//					{
-//						String typeIDString = s.substring(0,s.indexOf("|"));
-//						Dialogue o = (Dialogue)getMapObjectByTYPEIDName(typeIDString);
-//						if(preloadDialogueList.contains(o)==false)preloadDialogueList.add(o);
-//						s = s.substring(s.indexOf("|")+1);
-//					}
-//					else
-//					{
-//						String typeIDString = s.substring(0,s.indexOf(")"));
-//						Dialogue o = (Dialogue)getMapObjectByTYPEIDName(typeIDString);
-//						if(preloadDialogueList.contains(o)==false)preloadDialogueList.add(o);
-//						s = s.substring(s.indexOf(")")+1);
-//					}
-//				}
-//			}
-//
-//			try
-//			{
-//				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(baseDir+"PreloadDialogueData"))));
-//
-//				for(int i = 0; i < preloadDialogueList.size(); i++)
-//				{
-//					pw.println(preloadDialogueList.get(i).getData().toString());
-//				}
-//
-//				pw.close();
-//
-//			}
-//			catch(IOException e){System.out.println("Could not create file.");return;}
-//
-//		}
-//
+
+		//===============================================================================================
+		//public void exportClientPreloadedDialogueIndex()
+		{//===============================================================================================
+
+			//Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameOnline\\res\\");
+
+			ArrayList<Dialogue> preloadDialogueList = new ArrayList<Dialogue>();
+
+			for(int i=0;i<eventCheckList.size();i++)
+			{
+				Event e = eventCheckList.get(i);
+				String s = ""+e.text();
+				while(s.contains("DIALOGUE."))
+				{
+					s = s.substring(s.indexOf("DIALOGUE."));
+					if(s.indexOf("|")!=-1&&s.indexOf("|")<s.indexOf(")"))
+					{
+						String typeIDString = s.substring(0,s.indexOf("|"));
+						Dialogue o = (Dialogue)getMapObjectByTYPEIDName(typeIDString);
+						if(preloadDialogueList.contains(o)==false)preloadDialogueList.add(o);
+						s = s.substring(s.indexOf("|")+1);
+					}
+					else
+					{
+						String typeIDString = s.substring(0,s.indexOf(")"));
+						Dialogue o = (Dialogue)getMapObjectByTYPEIDName(typeIDString);
+						if(preloadDialogueList.contains(o)==false)preloadDialogueList.add(o);
+						s = s.substring(s.indexOf(")")+1);
+					}
+				}
+			}
+
+			try
+			{
+				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(baseDir+"PreloadDialogueData"))));
+
+				for(int i = 0; i < preloadDialogueList.size(); i++)
+				{
+					pw.println(preloadDialogueList.get(i).getData().toString());
+				}
+
+				pw.close();
+
+			}
+			catch(IOException e){System.out.println("Could not create file.");return;}
+
+		}
 
 
 
@@ -3665,104 +3664,105 @@ public class Project
 
 
 
-//
-//
-//		//===============================================================================================
-//		//public void exportClientPreloadedGameStringIndex()
-//		{//===============================================================================================
-//
-//			//Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameOnline\\res\\");
-//
-//			ArrayList<GameString> preloadGameStringList = new ArrayList<GameString>();
-//
-//			for(int i=0;i<eventCheckList.size();i++)
-//			{
-//				Event e = eventCheckList.get(i);
-//				String s = ""+e.text();
-//				while(s.contains("GAMESTRING."))
-//				{
-//					s = s.substring(s.indexOf("GAMESTRING."));
-//					if(s.indexOf("|")!=-1&&s.indexOf("|")<s.indexOf(")"))
-//					{
-//						String typeIDString = s.substring(0,s.indexOf("|"));
-//						GameString o = (GameString)getMapObjectByTYPEIDName(typeIDString);
-//						if(preloadGameStringList.contains(o)==false)preloadGameStringList.add(o);
-//						s = s.substring(s.indexOf("|")+1);
-//					}
-//					else
-//					{
-//						String typeIDString = s.substring(0,s.indexOf(")"));
-//						GameString o = (GameString)getMapObjectByTYPEIDName(typeIDString);
-//						if(preloadGameStringList.contains(o)==false)preloadGameStringList.add(o);
-//						s = s.substring(s.indexOf(")")+1);
-//					}
-//				}
-//			}
-//
-//			try
-//			{
-//				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(baseDir+"PreloadGameStringData"))));
-//
-//				for(int i = 0; i < preloadGameStringList.size(); i++)
-//				{
-//					pw.println(preloadGameStringList.get(i).getData().toString());
-//				}
-//
-//				pw.close();
-//
-//			}
-//			catch(IOException e){System.out.println("Could not create file.");return;}
-//
-//		}
-//
-//
-//		//===============================================================================================
-//		//public void exportClientPreloadedFlagIndex()
-//		{//===============================================================================================
-//
-//			//Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameOnline\\res\\");
-//
-//			ArrayList<Flag> preloadFlagList = new ArrayList<Flag>();
-//
-//			for(int i=0;i<eventCheckList.size();i++)
-//			{
-//				Event e = eventCheckList.get(i);
-//				String s = ""+e.text();
-//				while(s.contains("FLAG."))
-//				{
-//					s = s.substring(s.indexOf("FLAG."));
-//					if(s.indexOf("|")!=-1&&s.indexOf("|")<s.indexOf(")"))
-//					{
-//						String typeIDString = s.substring(0,s.indexOf("|"));
-//						Flag o = (Flag)getMapObjectByTYPEIDName(typeIDString);
-//						if(preloadFlagList.contains(o)==false)preloadFlagList.add(o);
-//						s = s.substring(s.indexOf("|")+1);
-//					}
-//					else
-//					{
-//						String typeIDString = s.substring(0,s.indexOf(")"));
-//						Flag o = (Flag)getMapObjectByTYPEIDName(typeIDString);
-//						if(preloadFlagList.contains(o)==false)preloadFlagList.add(o);
-//						s = s.substring(s.indexOf(")")+1);
-//					}
-//				}
-//			}
-//
-//			try
-//			{
-//				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(baseDir+"PreloadFlagData"))));
-//
-//				for(int i = 0; i < preloadFlagList.size(); i++)
-//				{
-//					pw.println(preloadFlagList.get(i).getData().toString());
-//				}
-//
-//				pw.close();
-//
-//			}
-//			catch(IOException e){System.out.println("Could not create file.");return;}
-//
-//		}
+
+
+
+		//===============================================================================================
+		//public void exportClientPreloadedGameStringIndex()
+		{//===============================================================================================
+
+			//Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameOnline\\res\\");
+
+			ArrayList<GameString> preloadGameStringList = new ArrayList<GameString>();
+
+			for(int i=0;i<eventCheckList.size();i++)
+			{
+				Event e = eventCheckList.get(i);
+				String s = ""+e.text();
+				while(s.contains("GAMESTRING."))
+				{
+					s = s.substring(s.indexOf("GAMESTRING."));
+					if(s.indexOf("|")!=-1&&s.indexOf("|")<s.indexOf(")"))
+					{
+						String typeIDString = s.substring(0,s.indexOf("|"));
+						GameString o = (GameString)getMapObjectByTYPEIDName(typeIDString);
+						if(preloadGameStringList.contains(o)==false)preloadGameStringList.add(o);
+						s = s.substring(s.indexOf("|")+1);
+					}
+					else
+					{
+						String typeIDString = s.substring(0,s.indexOf(")"));
+						GameString o = (GameString)getMapObjectByTYPEIDName(typeIDString);
+						if(preloadGameStringList.contains(o)==false)preloadGameStringList.add(o);
+						s = s.substring(s.indexOf(")")+1);
+					}
+				}
+			}
+
+			try
+			{
+				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(baseDir+"PreloadGameStringData"))));
+
+				for(int i = 0; i < preloadGameStringList.size(); i++)
+				{
+					pw.println(preloadGameStringList.get(i).getData().toString());
+				}
+
+				pw.close();
+
+			}
+			catch(IOException e){System.out.println("Could not create file.");return;}
+
+		}
+
+
+		//===============================================================================================
+		//public void exportClientPreloadedFlagIndex()
+		{//===============================================================================================
+
+			//Utils.makeDir("C:\\Users\\Administrator\\workspace\\BobsGameOnline\\res\\");
+
+			ArrayList<Flag> preloadFlagList = new ArrayList<Flag>();
+
+			for(int i=0;i<eventCheckList.size();i++)
+			{
+				Event e = eventCheckList.get(i);
+				String s = ""+e.text();
+				while(s.contains("FLAG."))
+				{
+					s = s.substring(s.indexOf("FLAG."));
+					if(s.indexOf("|")!=-1&&s.indexOf("|")<s.indexOf(")"))
+					{
+						String typeIDString = s.substring(0,s.indexOf("|"));
+						Flag o = (Flag)getMapObjectByTYPEIDName(typeIDString);
+						if(preloadFlagList.contains(o)==false)preloadFlagList.add(o);
+						s = s.substring(s.indexOf("|")+1);
+					}
+					else
+					{
+						String typeIDString = s.substring(0,s.indexOf(")"));
+						Flag o = (Flag)getMapObjectByTYPEIDName(typeIDString);
+						if(preloadFlagList.contains(o)==false)preloadFlagList.add(o);
+						s = s.substring(s.indexOf(")")+1);
+					}
+				}
+			}
+
+			try
+			{
+				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(baseDir+"PreloadFlagData"))));
+
+				for(int i = 0; i < preloadFlagList.size(); i++)
+				{
+					pw.println(preloadFlagList.get(i).getData().toString());
+				}
+
+				pw.close();
+
+			}
+			catch(IOException e){System.out.println("Could not create file.");return;}
+
+		}
 
 
 	}
@@ -4146,78 +4146,84 @@ public class Project
 	//===============================================================================================
 	public void exportServerMusicAssetIndex()
 	{//===============================================================================================
-
-
 			Utils.makeDir(EditorMain.serverDataDir);
 			//String oggTemp = EditorMain.exportDirectory;
 
 			try
 			{
+				System.out.println("Writing music.zip!");
 				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(new File(EditorMain.serverDataDir+"MusicData"))));
 
 				ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(EditorMain.htdocsZippedAssetsDir+"music.zip"));
 
-				for(int i = 0; i < musicList.size(); i++)
-				{
-					Music s = musicList.get(i);
+				for (int i = 0; i < musicList.size(); i++) {
+					try {
+						Music s = musicList.get(i);
 
-					//make COPY of data
-					MusicData data = new MusicData();
-					data.initFromString(s.getData().toString());
+						//make COPY of data
+						MusicData data = new MusicData();
+						data.initFromString(s.getData().toString());
+						System.out.println("Got Music " + s.getLongTypeName());
 
-					String fullFilePath = data.fullFilePath();
+						String fullFilePath = data.fullFilePath();
+						System.out.println("Path for music is " + data.fullFilePath());
 
-					if(fullFilePath.toLowerCase().endsWith(".wav") && FileUtils.sizeOf(new File(data.fullFilePath()))>1024*50)
-					{
-
-						String originalFilePath = ""+fullFilePath;
-
-						String fileName = data.fileName().substring(0,data.fileName().length()-4)+".ogg";
-						data.setFileName(fileName);
-
-						String oggDir = fullFilePath.substring(0,fullFilePath.lastIndexOf("\\"));
-						Utils.makeDir(oggDir+"\\ogg\\");
-						fullFilePath = oggDir+"\\ogg\\"+fileName;
-
-						File f = new File(fullFilePath);
-						if(f.exists()==false)
+						if(fullFilePath.toLowerCase().endsWith(".wav") && FileUtils.sizeOf(new File(data.fullFilePath()))>1024*50)
 						{
-							System.out.println("Encoding "+originalFilePath+"...");
-							String[] commands = {EditorMain.oggEncPath, "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
-							try{Runtime.getRuntime().exec(commands).waitFor();}catch(InterruptedException e){e.printStackTrace();}
-							System.out.println("Finished encoding");
+
+							String originalFilePath = ""+fullFilePath;
+
+							String fileName = data.fileName().substring(0,data.fileName().length()-4)+".ogg";
+							data.setFileName(fileName);
+
+							String oggDir = fullFilePath.substring(0,fullFilePath.lastIndexOf("\\"));
+							Utils.makeDir(oggDir+"\\ogg\\");
+							fullFilePath = oggDir+"\\ogg\\"+fileName;
+
+							File f = new File(fullFilePath);
+							if(f.exists()==false)
+							{
+								System.out.println("Encoding "+originalFilePath+"...");
+								String[] commands = {EditorMain.oggEncPath, "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
+								try{Runtime.getRuntime().exec(commands).waitFor();}catch(InterruptedException e){e.printStackTrace();}
+								System.out.println("Finished encoding");
+							}
+
 						}
 
+						//remove filepath from COPY of data sent to server
+						data.setFullFilePath("");
+
+						File theFile = new File(fullFilePath);
+						if (theFile.exists()) {
+							if (s.preload()) {
+								Utils.putFileInZipAsMD5(zos, fullFilePath);
+							}
+
+
+							String md5FileName = Utils.getFileMD5Checksum(fullFilePath);
+
+							data.setMD5Name(md5FileName);
+							s.setMD5Name(md5FileName);
+
+							pw.println(data.toJSON());
+
+							FileUtils.copyFile(new File(fullFilePath), new File(EditorMain.htdocsZippedAssetsDir + md5FileName));
+
+							System.out.println("Copied to zip fullFilePath: " + fullFilePath + " other path: " + EditorMain.htdocsZippedAssetsDir + md5FileName);
+						} else {
+							System.out.println("It appears that the file at " + fullFilePath + " does not exist.");
+						}
+					} catch (IOException e) {
+						e.printStackTrace();
 					}
-
-					//remove filepath from COPY of data sent to server
-					data.setFullFilePath("");
-
-					if(s.preload())
-					{
-						Utils.putFileInZipAsMD5(zos,fullFilePath);
-					}
-
-
-					String md5FileName = Utils.getFileMD5Checksum(fullFilePath);
-
-					data.setMD5Name(md5FileName);
-					s.setMD5Name(md5FileName);
-
-					pw.println(data.toJSON());
-
-					FileUtils.copyFile(new File(fullFilePath),new File(EditorMain.htdocsZippedAssetsDir+md5FileName));
-
-
-
-
 				}
 				pw.close();
 
 				zos.close();
+			} catch (IOException e1) {
+				e1.printStackTrace();
 			}
-			catch (FileNotFoundException e1){}
-			catch (IOException e){}
 	}
 
 
@@ -4245,38 +4251,42 @@ public class Project
 
 					String fullFilePath = data.fullFilePath();
 
-					if(fullFilePath.toLowerCase().endsWith(".wav") && FileUtils.sizeOf(new File(data.fullFilePath()))>1024*50)
-					{
-
-						String originalFilePath = ""+fullFilePath;
-
-						String fileName = data.fileName().substring(0,data.fileName().length()-4)+".ogg";
-						data.setFileName(fileName);
-
-						String oggDir = fullFilePath.substring(0,fullFilePath.lastIndexOf("\\"));
-						Utils.makeDir(oggDir+"\\ogg\\");
-						fullFilePath = oggDir+"\\ogg\\"+fileName;
-
-						File f = new File(fullFilePath);
-						if(f.exists()==false)
+					File fileThing = new File(fullFilePath);
+					if (fileThing.exists()) {
+						if(fullFilePath.toLowerCase().endsWith(".wav") && FileUtils.sizeOf(new File(data.fullFilePath()))>1024*50)
 						{
 
-							String[] commands = {EditorMain.oggEncPath, "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
-							try{Runtime.getRuntime().exec(commands).waitFor();}catch(InterruptedException e){e.printStackTrace();}
+							String originalFilePath = ""+fullFilePath;
+
+							String fileName = data.fileName().substring(0,data.fileName().length()-4)+".ogg";
+							data.setFileName(fileName);
+
+							String oggDir = fullFilePath.substring(0,fullFilePath.lastIndexOf("\\"));
+							Utils.makeDir(oggDir+"\\ogg\\");
+							fullFilePath = oggDir+"\\ogg\\"+fileName;
+
+							File f = new File(fullFilePath);
+							if(f.exists()==false)
+							{
+
+								String[] commands = {EditorMain.oggEncPath, "-q 5", "--output=\""+fullFilePath+"\"", "\""+originalFilePath+"\""};
+								try{Runtime.getRuntime().exec(commands).waitFor();}catch(InterruptedException e){e.printStackTrace();}
+							}
+
 						}
 
+						//remove filepath from COPY of data sent to server
+						data.setFullFilePath("");
+
+						String md5FileName = Utils.putFileInZipAsMD5(zos,fullFilePath);
+
+						data.setMD5Name(md5FileName);
+						s.setMD5Name(md5FileName);
+
+						pw.println(data.toJSON());
+					} else {
+						System.out.println(fullFilePath + " does not exist.");
 					}
-
-					//remove filepath from COPY of data sent to server
-					data.setFullFilePath("");
-
-					String md5FileName = Utils.putFileInZipAsMD5(zos,fullFilePath);
-
-					data.setMD5Name(md5FileName);
-					s.setMD5Name(md5FileName);
-
-					pw.println(data.toJSON());
-
 				}
 				pw.close();
 
