@@ -1,6 +1,8 @@
+# bgEditor
+
 Authors: Phil Kanaby, ok
 
-# bgEditor
+See editor documentation in [docs/editor_docs.txt](./docs/editor_docs.txt)
 
 ## Building
 
@@ -12,6 +14,7 @@ Authors: Phil Kanaby, ok
 6. Set the JVM options to `-Xmx3G -Xms3G -XX:+UseParallelGC`. Bob said you likely need 16GB ram to use it, but 3GB ram works just as good.
 7. Set the main class to `com.bobsgame.EditorMain`
 8. Apply then click "OK"
+![Run Configuration](./docs/run_configuration.png)
 9. Click the run button on the top right and the editor will open.
 
 ## Exporting the Map

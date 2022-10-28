@@ -92,13 +92,13 @@ public class EditorMain extends JFrame implements ActionListener, ItemListener, 
 
 
 	public static String exportDirectory = System.getProperties().getProperty("user.home")+"\\Desktop\\bgEditor_Output\\";
-	public static String defaultProjectFolder = "F:\\source\\games\\bobsgame\\workspace\\_gfx\\_____MAPS\\";
-	public static String serverDataDir = "F:\\source\\games\\bobsgame\\workspace\\BobsGameServer\\src\\main\\resources\\data\\";
+	public static String defaultProjectFolder = "F:\\source\\bobsgame\\workspace\\_gfx\\_____MAPS\\";
+	public static String serverDataDir = "F:\\source\\bobsgame\\workspace\\BobsGameServer\\src\\main\\resources\\data\\";
 	public static String htdocsZippedAssetsDir = "C:\\xampp\\htdocs\\z\\";
-	public static String oggEncPath = "F:\\source\\games\\bobsgame\\workspace\\_sfx\\oggenc2.exe";
-	public static String lameEncoderPath = "F:\\source\\games\\bobsgame\\workspace\\_sfx\\lame.exe";
-	public static String clientPreloadedAssetsDir = "F:\\source\\games\\bobsgame\\workspace\\BobsGameOnline\\src\\main\\resources\\";
-	public static String androidProjectAssetsDir = "F:\\source\\games\\bobsgame\\workspace\\bg-android\\assets\\";
+	public static String oggEncPath = "F:\\source\\bobsgame\\workspace\\_sfx\\oggenc2.exe";
+	public static String lameEncoderPath = "F:\\source\\bobsgame\\workspace\\_sfx\\lame.exe";
+	public static String clientPreloadedAssetsDir = "F:\\source\\bobsgame\\workspace\\BobsGameOnline\\src\\main\\resources\\";
+	public static String androidProjectAssetsDir = "F:\\source\\bobsgame\\workspace\\bg-android\\assets\\";
 
 
 
