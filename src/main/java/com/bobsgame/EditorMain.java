@@ -24,6 +24,7 @@ import javax.swing.plaf.ScrollBarUI;
 import javax.swing.plaf.synth.Region;
 import javax.swing.plaf.synth.SynthScrollBarUI;
 
+import com.bobsgame.editor.JMenuSpacer;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.LWJGLUtil;
 import org.lwjgl.openal.AL;
@@ -2006,17 +2007,11 @@ public class EditorMain extends JFrame implements ActionListener, ItemListener, 
 	//===============================================================================================
 	public void openProject(String s)
 	{//===============================================================================================
-		if(project_loaded)
-		{
+		if (project_loaded) {
 		}		// Ask to save previous project		*** ADD LATER ***
-
-
 
 		// Halt listeners to prevent errors on float clicking to open
 		haltListeners();
-
-
-
 
 //		filedialog.setDialogType(JFileChooser.OPEN_DIALOG);
 //		filedialog.showOpenDialog(this);
@@ -2039,82 +2034,73 @@ public class EditorMain extends JFrame implements ActionListener, ItemListener, 
 		//filedialog.setMode(FileDialog.LOAD);
 		//filedialog.setVisible(true);
 
-
-		if(s==null)
-		{
+		if (s == null) {
 			int val = fileChooser.showOpenDialog(this);
 
 			//fileChooser.firePropertyChange("viewType",FilePane.VIEWTYPE_LIST,FilePane.VIEWTYPE_LIST);
 
-			if(val==JFileChooser.APPROVE_OPTION)
-			{
-
+			if (val == JFileChooser.APPROVE_OPTION) {
 				paletteChoice.removeAllItems();
 				mapChoice.removeAllItems();
 				stateChoice.removeAllItems();
 
-
-
-
 				project = new Project(getFileDialogFileName(), getFileDialogDirectoryPath(), this);
-			}
-			else
-			{
+			} else {
 				restartListeners();
 				return;
 			}
+		} else {
+			File projectFile = new File(s);
+
+			if (projectFile.exists()) {
+				paletteChoice.removeAllItems();
+				mapChoice.removeAllItems();
+				stateChoice.removeAllItems();
+
+				project = new Project(s, "./", this);
+			} else {
+				int val = fileChooser.showOpenDialog(this);
+
+				if (val == JFileChooser.APPROVE_OPTION) {
+					paletteChoice.removeAllItems();
+					mapChoice.removeAllItems();
+					stateChoice.removeAllItems();
+
+					project = new Project(getFileDialogFileName(), getFileDialogDirectoryPath(), this);
+				} else {
+					restartListeners();
+					return;
+				}
+			}
 		}
-		else
-		{
-
-			paletteChoice.removeAllItems();
-			mapChoice.removeAllItems();
-			stateChoice.removeAllItems();
-
-			project = new Project(s, "./", this);
-		}
-
-
 
 		project_loaded = true;
 
-
-
 		restartListeners();
-
-
-
 
 		saveProject.setEnabled(true);
 
-
-		for(int i = 0; i < Project.getNumMaps(); i++)
-		{
+		for (int i = 0; i < Project.getNumMaps(); i++) {
 			mapChoice.addItem(Project.getMap(i).name());
 		}
-		if(Project.getNumMaps() > 0)
-		{
-			mapChoice.setSelectedIndex(mapChoice.getItemCount() - 1);//project.getSelectedMapIndex());
+
+		if (Project.getNumMaps() > 0) {
+			mapChoice.setSelectedIndex(mapChoice.getItemCount() - 1); //project.getSelectedMapIndex());
 		}
 
-
-		for(int i = 0; i < Project.getSelectedMap().getNumStates(); i++)
-		{
+		for (int i = 0; i < Project.getSelectedMap().getNumStates(); i++) {
 			stateChoice.addItem(Project.getSelectedMap().getState(i).name());
 		}
+
 		stateChoice.setSelectedIndex(0);
 
-
-		for(int i = 0; i < Project.getNumPalettes(); i++)
-		{
+		for (int i = 0; i < Project.getNumPalettes(); i++) {
 			paletteChoice.addItem(Project.getPalette(i).name);
 		}
-		if(Project.getNumPalettes() > 0)
-		{
-			paletteChoice.setSelectedIndex(paletteChoice.getItemCount() - 1);//project.getSelectedPaletteIndex());
+
+		if (Project.getNumPalettes() > 0) {
+			paletteChoice.setSelectedIndex(paletteChoice.getItemCount() - 1); //project.getSelectedPaletteIndex());
 		}
-
-
 
 		refreshTopPanelLayout();
 
@@ -2125,15 +2111,10 @@ public class EditorMain extends JFrame implements ActionListener, ItemListener, 
 		//tileCanvas.paintBuffer();
 		tileCanvas.paint();
 
-
 		mapCanvas.setSizedoLayout();
 		mapCanvas.zoomOut();
 		mapCanvas.zoomIn();
 		mapCanvas.updateAndRepaintAllLayerImagesIntoMapCanvasImageAndRepaintMapCanvas();
-
-
-
-
 	}
 
 	//===============================================================================================
@@ -3563,14 +3544,4 @@ public class EditorMain extends JFrame implements ActionListener, ItemListener, 
 
 	}
 
-}
-
-class JMenuSpacer extends JMenuItem
-{
-	public JMenuSpacer(String s)
-	{
-		super.setText(s);
-		super.setEnabled(false);
-		super.setArmed(false);
-	}
 }
