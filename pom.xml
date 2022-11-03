@@ -84,7 +84,6 @@
             <artifactId>netty-all</artifactId>
             <version>4.1.77.Final</version>
         </dependency>
-        <!-- idk why this is used here -->
         <dependency>
             <groupId>org.lwjgl.lwjgl</groupId>
             <artifactId>parent</artifactId>

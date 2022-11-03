@@ -6,6 +6,8 @@ See editor documentation in [docs/editor_docs.txt](./docs/editor_docs.txt)
 
 ## Running
 
+### IntelliJ IDEA
+
 1. Import this project into IntelliJ IDEA as a Maven project
 2. Click the refresh icon on top right of the editor panel
 3. On the right, click "Maven" then "Lifecycle" then "package"
@@ -17,6 +19,11 @@ See editor documentation in [docs/editor_docs.txt](./docs/editor_docs.txt)
 8. Apply then click "OK"
 ![Run Configuration](./docs/run_configuration.png)
 9. Click the run button on the top right and the editor will open.
+
+### Eclipse
+1. Load the project as a Maven project.
+2. Run "package" Maven task.
+3. Run.
 
 ## Building 
 
